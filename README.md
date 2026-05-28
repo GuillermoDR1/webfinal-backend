@@ -38,7 +38,7 @@ python create_user.py
 ``
 gunicorn app:app
 ``
-# O de manera local tradicional: python app.py
+### O de manera local tradicional: python app.py
 
 ## Endpoints principales del sistema
 * **El sistema expone las siguientes rutas principales:**
