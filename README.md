@@ -1,9 +1,7 @@
 # TechFix & Ventas - Backend API (Flask + MySQL)
 
 Este repositorio contiene la API REST para el sistema de gestión de inventario de hardware y seguimiento de taller **TechFix & Ventas**.
-
-> 📄 **Nota para la evaluación:** La documentación completa del sistema (arquitectura, capturas, plataformas usadas y explicación de seguridad) se encuentra unificada en el archivo `DOCUMENTACION.md` del repositorio Frontend para mantener un orden centralizado.
-> 👉 **[PON AQUÍ EL ENLACE A TU REPOSITORIO FRONTEND]**
+> 👉 **webfinal-frontend.vercel.app**
 
 ## 🚀 Enlace de Producción
 * **Backend Vivo (Render):** https://api-techfix-backend.onrender.com
