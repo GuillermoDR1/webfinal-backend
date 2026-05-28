@@ -1,66 +1,59 @@
-# Plantilla Backend Flask + MariaDB
+# TechFix & Ventas - Backend API (Flask + MySQL)
 
-Esta plantilla acompaña al frontend Vue del proyecto base. Está diseñada para adaptarse a cualquier giro de negocio: barbería, taller mecánico, tienda, servicios, citas, inventario, etc.
+Este repositorio contiene la API REST para el sistema de gestión de inventario de hardware y seguimiento de taller **TechFix & Ventas**.
 
-## 1. Crear entorno virtual
+> 📄 **Nota para la evaluación:** La documentación completa del sistema (arquitectura, capturas, plataformas usadas y explicación de seguridad) se encuentra unificada en el archivo `DOCUMENTACION.md` del repositorio Frontend para mantener un orden centralizado.
+> 👉 **[PON AQUÍ EL ENLACE A TU REPOSITORIO FRONTEND]**
 
-```bash
+## 🚀 Enlace de Producción
+* **Backend Vivo (Render):** https://api-techfix-backend.onrender.com
+
+---
+
+## 💻 Instrucciones para despliegue local (Desarrollo)
+
+Si deseas correr este servidor en tu propia computadora, sigue estos pasos:
+
+### 1. Crear y activar entorno virtual
+``
 python -m venv venv
 venv\Scripts\activate
-```
+``
 
-## 2. Instalar dependencias
-
-```bash
+### 2. Instalar dependencias
+``
 pip install -r requirements.txt
-```
+``
 
-## 3. Configurar variables de entorno
+### 3. Configurar variables de entorno
+Crea un archivo llamado .env en la raíz del proyecto y ajusta tus credenciales (Base de datos y SMTP de Gmail) siguiendo el formato necesario.
 
-Copia `.env.example` como `.env` y ajusta tus datos:
+### 4. Base de datos
+Importa el archivo sistema_pcs.sql en tu gestor de base de datos MySQL/MariaDB (por ejemplo, usando phpMyAdmin).
 
-```bash
-copy .env.example .env
-```
-
-## 4. Crear base de datos
-
-Ejecuta `schema.sql` en MariaDB.
-
-## 5. Crear usuario de prueba
-
-```bash
+### 5. Crear usuario administrador
+``
 python create_user.py
-```
+``
 
-Usuario creado:
+### 6. Ejecutar servidor
+``
+gunicorn app:app
+``
+# O de manera local tradicional: python app.py
 
-- correo: `admin@demo.com`
-- contraseña: `12345`
+## Endpoints principales del sistema
+* **El sistema expone las siguientes rutas principales:**
+* **GET, POST, PUT, DELETE /componentes (Gestión de inventario)
+* **GET, POST, PUT, DELETE /reparaciones (Gestión de equipos en taller)
+* **POST /login (Inicio de sesión)
+* **GET /sesion (Validación de estado)
+* **POST /logout (Cierre de sesión)
 
-## 6. Ejecutar servidor
-
-```bash
-python app.py
-```
-
-## Endpoints principales
-
-- `GET /registros`
-- `GET /registros/<id>`
-- `POST /registros`
-- `PUT /registros/<id>`
-- `DELETE /registros/<id>`
-- `POST /login`
-- `GET /sesion`
-- `POST /logout`
-- `POST /contacto`
-
-## Archivos principales
-
-- `app.py`: rutas/endpoints.
-- `db.py`: conexión a MariaDB.
-- `validators.py`: validaciones mínimas.
-- `security.py`: hash y verificación de contraseñas.
-- `email_service.py`: envío de correo.
-- `models.py`: clase base para registros.
+## Estructura de archivos principales
+* **app.py: Rutas y endpoints.
+* **db.py: Conexión a la base de datos MySQL.
+* **validators.py: Validaciones de entrada de datos del usuario.
+* **security.py: Hash y verificación de contraseñas.
+* **email_service.py: Lógica de envío de correos mediante SMTP.
+* **models.py: Modelos de datos para componentes y reparaciones.
