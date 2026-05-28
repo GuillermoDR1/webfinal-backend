@@ -3,12 +3,12 @@
 Este repositorio contiene la API REST para el sistema de gestión de inventario de hardware y seguimiento de taller **TechFix & Ventas**.
 > 👉 **webfinal-frontend.vercel.app**
 
-## 🚀 Enlace de Producción
+## Enlace de Producción
 * **Backend Vivo (Render):** https://api-techfix-backend.onrender.com
 
 ---
 
-## 💻 Instrucciones para despliegue local (Desarrollo)
+## Instrucciones para despliegue local (Desarrollo)
 
 Si deseas correr este servidor en tu propia computadora, sigue estos pasos:
 
